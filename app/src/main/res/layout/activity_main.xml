@@ -46,4 +46,10 @@
         android:background="@color/category_phrases"
         android:text="@string/category_phrases" />
 
+    <TextView
+        android:id="@+id/mineiro"
+        style="@style/CategoryStyle"
+        android:background="@color/category_minas"
+        android:text="@string/category_minas" />
+
 </LinearLayout>

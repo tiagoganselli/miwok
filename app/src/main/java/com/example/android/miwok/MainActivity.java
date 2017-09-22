@@ -96,6 +96,22 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(phrasesIntent);
             }
         });
+
+        // Find the View that shows the phrases category
+        TextView mineiro = (TextView) findViewById(R.id.mineiro);
+
+        // Set a click listener on that View
+        mineiro.setOnClickListener(new OnClickListener() {
+            // The code in this method will be executed when the phrases category is clicked on.
+            @Override
+            public void onClick(View view) {
+                // Create a new intent to open the {@link PhrasesActivity}
+                Intent mineiroIntent = new Intent(MainActivity.this, MineiroActivity.class);
+
+                // Start the new activity
+                startActivity(mineiroIntent);
+            }
+        });
     }
 
 }
