@@ -1,13 +1,16 @@
 package com.example.android.miwok;
 
+import android.graphics.Color;
+
 /**
  * Created by ganselli on 19/09/17.
  *
  * Contains Native and Foreign strings of a word.
+ * Can also contain an Image to be displayed.
+ *
  * Native is the language you speak.
  * Foreign is the language you are learning.
  */
-
 public class Word {
 
     private String mNativeWord;

@@ -1,12 +1,15 @@
 package com.example.android.miwok;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.support.annotation.NonNull;
+import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -17,8 +20,15 @@ import java.util.ArrayList;
 
 public class WordAdapter extends ArrayAdapter<Word> {
 
+    private int mTextBackgroundColor = Color.WHITE;
+
     public WordAdapter(Context context, ArrayList<Word> words) {
         super(context, R.layout.list_item, words);
+    }
+
+    public WordAdapter(Context context, ArrayList<Word> words, int textBackgroundColor) {
+        super(context, R.layout.list_item, words);
+        mTextBackgroundColor = textBackgroundColor;
     }
 
     @NonNull
@@ -40,9 +50,14 @@ public class WordAdapter extends ArrayAdapter<Word> {
         if (currentWord.hasImage()) {
             imageView.setVisibility(View.VISIBLE);
             imageView.setImageResource(currentWord.getImageResourceId());
+            imageView.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.tan_background));
         } else {
             imageView.setVisibility(View.GONE);
         }
+
+        // Set background color for the layout which contains words.
+        LinearLayout wordLayout = (LinearLayout) listItemView.findViewById(R.id.word_layout);
+        wordLayout.setBackgroundColor(mTextBackgroundColor);
 
         // Find the TextView in the list_item.xml layout with the Native word
         TextView nativeTextView = (TextView) listItemView.findViewById(R.id.native_word);
