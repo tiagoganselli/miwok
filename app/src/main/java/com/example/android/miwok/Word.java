@@ -12,10 +12,20 @@ public class Word {
 
     private String mNativeWord;
     private String mForeignWord;
+    private int mDrawableId;
+
+    private static final int NO_IMAGE_PROVIDED = -1;
 
     public Word(String nativeWord, String foreignWord) {
         mNativeWord = nativeWord;
         mForeignWord = foreignWord;
+        mDrawableId = NO_IMAGE_PROVIDED;
+    }
+
+    public Word(String nativeWord, String foreignWord, int imageResourceId) {
+        mNativeWord = nativeWord;
+        mForeignWord = foreignWord;
+        mDrawableId = imageResourceId;
     }
 
     public String getNativeWord() {
@@ -26,4 +36,9 @@ public class Word {
         return mForeignWord;
     }
 
+    public int getImageResourceId() {
+        return mDrawableId;
+    }
+
+    public boolean hasImage() { return mDrawableId == NO_IMAGE_PROVIDED?false:true; }
 }
