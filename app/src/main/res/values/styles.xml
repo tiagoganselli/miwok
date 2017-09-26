@@ -30,7 +30,6 @@
         <item name="android:textStyle">bold</item>
         <item name="android:textSize">18sp</item>
         <item name="android:textAppearance">?android:textAppearanceMedium</item>
-        <item name="android:background">@color/tan_background</item>
     </style>
 
     <!-- Style for displaying vocabulary words -->

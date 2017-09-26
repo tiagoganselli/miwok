@@ -6,7 +6,8 @@
 
     <ImageView
         style="@style/ListItemImageStyle"
-        android:id="@+id/item_image"/>
+        android:id="@+id/item_image"
+        android:background="@color/tan_background"/>
         <!--android:src="@mipmap/ic_launcher"-->
 
     <LinearLayout
